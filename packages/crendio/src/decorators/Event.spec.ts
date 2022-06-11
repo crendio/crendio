@@ -19,6 +19,7 @@ describe("event metadata works", () => {
 
     const appInstance = new ClientApp();
 
-    console.log(`have instances`, appInstance.events);
+    expect(appInstance.events).toHaveLength(1);
+    expect(appInstance.events[0]).toEqual("onSessionStarted");
   });
 });

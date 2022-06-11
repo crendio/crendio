@@ -12,12 +12,9 @@ export const App = (options: AppOptions) => {
   return function <T extends { new (...args: any[]): {} }>(constructor: T) {
     const allEvents: string[] = [];
     for (const module of options.modules) {
-      console.log(`module is`, module);
-      const events = Reflect.getMetadata("events", module);
-      // const events = Reflect.getOwnMetadata("events", module);
-      console.log(`defined events?`, events);
+      const events = Reflect.getMetadata("events", module.prototype);
       if (events) {
-        for (const event of events) {
+        for (const [name, event] of Object.entries<any>(events)) {
           allEvents.push(event.methodName);
         }
       }

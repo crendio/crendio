@@ -2,6 +2,14 @@ export type EventOptions = {
   net: boolean;
 };
 
+export type EventData = {
+  methodName: string;
+  handler: () => void | Promise<void>;
+  options: EventOptions;
+};
+
+export type EventDatas = { [key: string]: EventData };
+
 const defaultOptions: Partial<EventOptions> = {
   net: false,
 };
