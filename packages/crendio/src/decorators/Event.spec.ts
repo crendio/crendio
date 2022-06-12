@@ -3,6 +3,7 @@ import { Module } from "./Module";
 import { Event } from "./Event";
 import { App } from "./App";
 import { Application } from "../classes";
+import { mockOn } from "../util/fx-shim";
 
 describe("event metadata works", () => {
   test("event gets set", () => {
@@ -21,5 +22,7 @@ describe("event metadata works", () => {
 
     expect(appInstance.events).toHaveLength(1);
     expect(appInstance.events[0]).toEqual("onSessionStarted");
+
+    expect(mockOn).toHaveBeenCalledTimes(1);
   });
 });
