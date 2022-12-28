@@ -1,5 +1,8 @@
 {
   "name": "@crendio/crendio",
   "version": "0.0.1",
-  "type": "commonjs"
+  "type": "commonjs",
+  "dependencies": {
+    "tsyringe": "^4.7.0"
+  }
 }

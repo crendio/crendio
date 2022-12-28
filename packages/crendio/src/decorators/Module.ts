@@ -89,6 +89,7 @@ const registerCommands = (target: any, commands: CommandMeta[]) => {
           return;
         }
 
+        ///@ts-ignore
         this[command.handler](args[0], [...args[1]]);
       },
       false

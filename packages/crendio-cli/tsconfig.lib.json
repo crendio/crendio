@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../dist/out-tsc",
+    "declaration": true,
+    "types": ["reflect-metadata", "@citizenfx/client", "@citizenfx/server"]
+  },
+  "include": [
+    "**/*.ts",
+    "../../node_modules/@types/node/globals.global.d.ts"
+  ],
+  "exclude": ["jest.config.ts", "**/*.spec.ts", "**/*.test.ts"]
+}

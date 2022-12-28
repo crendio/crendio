@@ -7,6 +7,8 @@
   "dependencies": {
     "@citizenfx/client": "^2.0.5644-1",
     "@citizenfx/server": "^2.0.5644-1",
+    "esbuild": "^0.15.6",
+    "fivem-js": "^1.5.2",
     "tslib": "^2.3.0"
   },
   "devDependencies": {

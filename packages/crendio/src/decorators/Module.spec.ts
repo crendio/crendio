@@ -1,6 +1,6 @@
 import "reflect-metadata";
 import { Module } from "./Module";
-import { container, singleton } from "tsyringe";
+import { container } from "tsyringe";
 
 describe("properly decorates", () => {
   afterEach(() => {

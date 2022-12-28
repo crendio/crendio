@@ -37,3 +37,9 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+packages/fx-server/txData/**/*
+!packages/fx-server/txData/.gitkeep
+
+packages/fx-server/cache/**/*
+!packages/fx-server/cache/.gitkeep
+**/streamed_assets/**/*

@@ -2,6 +2,8 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
-    "crendio": "packages/crendio"
+    "crendio": "packages/crendio",
+    "crendio-cli": "packages/crendio-cli",
+    "crendio-framework": "packages/crendio-framework"
   }
 }

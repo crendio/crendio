@@ -8,25 +8,30 @@ const defaultOptions: Partial<AppOptions> = {
 
 export const App = (options: AppOptions) => {
   const userOptions = options || {};
-  const localOptions = { ...defaultOptions, ...options };
+  const localOptions = { ...defaultOptions, ...userOptions };
   return function <T extends { new (...args: any[]): {} }>(constructor: T) {
     const allEvents: string[] = [];
-    for (const module of options.modules) {
+
+    const onReadys: (() => void)[] = [];
+    for (const module of localOptions.modules) {
       const events = Reflect.getMetadata("events", module.prototype);
       if (events) {
-        for (const [name, event] of Object.entries<any>(events)) {
+        for (const [, event] of Object.entries<any>(events)) {
           allEvents.push(event.methodName);
         }
       }
       const modInstance = new module();
       if (modInstance["$onReady"]) {
-        console.log(`found a ready`, typeof modInstance["$onReady"]);
+        onReadys.push(modInstance["$onReady"]);
       }
     }
 
     const tr = class extends constructor {
       constructor(...args: any[]) {
         super(...args);
+        onReadys.forEach((v) => {
+          v.call<unknown, unknown[], unknown>(this as unknown);
+        });
         Object.defineProperty(this, "events", {
           value: allEvents,
           writable: true,
@@ -35,6 +40,7 @@ export const App = (options: AppOptions) => {
       }
     };
 
+    new tr();
     return tr;
   };
 };

@@ -3,7 +3,7 @@ import { Module } from "./Module";
 import { Event } from "./Event";
 import { App } from "./App";
 import { Application } from "../classes";
-import { mockOn } from "../util/fx-shim";
+import { mockOn } from "../util/fx-shim.spec";
 
 describe("event metadata works", () => {
   test("event gets set", () => {
