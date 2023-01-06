@@ -1,5 +1,5 @@
 import { autoInjectable, singleton } from "tsyringe";
-import Util from "../util/Util";
+import { Util } from "../util/Util";
 import { EventData, EventDatas } from "./Event";
 import { CommandMeta } from "./Command";
 

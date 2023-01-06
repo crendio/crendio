@@ -1,11 +1,11 @@
 {
+  "name": "crendio-framework",
   "$schema": "..\\..\\node_modules\\nx\\schemas\\project-schema.json",
   "sourceRoot": "packages/crendio/src",
   "projectType": "application",
   "targets": {
     "build": {
       "executor": "@nrwl/workspace:run-commands",
-
       "options": {
         "command": "node ./build.js",
         "cwd": "packages/crendio-framework"

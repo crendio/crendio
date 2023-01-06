@@ -6,6 +6,10 @@ esbuild.build({
   bundle: true,
   outfile: "../fx-server/resources/framework/build/server.js",
   platform: "node",
+  minify: true,
+  minifyWhitespace: true,
+  minifySyntax: true,
+  minifyIdentifiers: true,
   external: [],
 });
 
@@ -14,5 +18,9 @@ esbuild.build({
   bundle: true,
   outfile: "../fx-server/resources/framework/build/client.js",
   platform: "node",
+  minify: true,
+  minifySyntax: true,
+  minifyWhitespace: true,
+  minifyIdentifiers: true,
   external: [],
 });

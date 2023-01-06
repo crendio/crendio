@@ -1,4 +1,5 @@
 {
+  "name": "crendio",
   "$schema": "..\\..\\node_modules\\nx\\schemas\\project-schema.json",
   "sourceRoot": "packages/crendio/src",
   "projectType": "library",

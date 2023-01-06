@@ -4,6 +4,8 @@
   "projects": {
     "crendio": "packages/crendio",
     "crendio-cli": "packages/crendio-cli",
-    "crendio-framework": "packages/crendio-framework"
+    "crendio-framework": "packages/crendio-framework",
+    "crendio-ui": "packages/crendio-ui",
+    "crendio-ui-e2e": "packages/crendio-ui-e2e"
   }
 }

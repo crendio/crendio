@@ -1,9 +1,9 @@
 version: '3.4'
 services:
   fivem:
-    container_name: cyntaax-fivem-server
+    container_name: crendio-fivem-server
     build:
-      context: ./fx
+      context: ./packages/fx-server
       dockerfile: Dockerfile
       args:
         - MYSQL_USER=$MYSQL_USER
@@ -33,11 +33,11 @@ services:
       WAIT_HOSTS: db:3306
     volumes:
       - /srv/resources/node_modules
-      - ./fx/resources/:/srv/resources
-      - ./fx/streamed_assets/:/srv/resources/[assets]
-      - ./fx/cache:/srv/cache
-      - ./fx/crashes:/srv/crashes
-      - ./fx/txData:/srv/txData
+      - ./packages/fx-server/resources/:/srv/resources
+      - ./packages/fx-server/streamed_assets/:/srv/resources/[assets]
+      - ./packages/fx-server/cache:/srv/cache
+      - ./packages/fx-server/crashes:/srv/crashes
+      - ./packages/fx-server/txData:/srv/txData
   db:
     image: mysql:5.7
     restart: always

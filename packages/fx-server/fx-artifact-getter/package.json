@@ -2,7 +2,6 @@
   "type": "module",
   "name": "fivem-artifact-getter",
   "description": "Gets FiveM artifacts",
-  "bin":  "./index.js",
   "scripts": {
     "download": "node ./index.js"
   },

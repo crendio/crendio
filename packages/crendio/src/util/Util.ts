@@ -1,4 +1,5 @@
 export class Util {
+export class Util {
   public static getMetadata<U = any, T = any>(
     target: T,
     key: string,
@@ -17,5 +18,17 @@ export class Util {
    */
   public static wait(time: number): Promise<void> {
     return new Promise((res) => setTimeout(res, time));
+  }
+
+  public static async loadModel(model: number | string): Promise<void> {
+    return new Promise((resolve, reject) => {
+      RequestModel(model);
+      const mtick = setTick(() => {
+        if (HasModelLoaded(model)) {
+          clearTick(mtick);
+          resolve();
+        }
+      });
+    });
   }
 }
