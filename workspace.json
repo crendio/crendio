@@ -6,6 +6,7 @@
     "crendio-cli": "packages/crendio-cli",
     "crendio-framework": "packages/crendio-framework",
     "crendio-ui": "packages/crendio-ui",
-    "crendio-ui-e2e": "packages/crendio-ui-e2e"
+    "crendio-ui-e2e": "packages/crendio-ui-e2e",
+    "fx-server": "packages/fx-server"
   }
 }

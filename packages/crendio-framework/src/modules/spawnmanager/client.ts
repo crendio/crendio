@@ -1,4 +1,4 @@
-import { Module, Util } from "@crendio/crendio";
+import { Module, Util, Event } from "@crendio/crendio";
 import { Vector3 } from "fivem-js";
 
 @Module({
@@ -89,5 +89,12 @@ export default class SpawnClient {
         ClearPedTasksImmediately(ped);
       }
     }
+  }
+
+  @Event("onClientMapStart", { net: false })
+  public onStart() {
+    this.spawnPlayer(new Vector3(0, 0, 0)).then(() => {
+      console.log(`player spawned`);
+    });
   }
 }

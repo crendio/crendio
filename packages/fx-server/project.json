@@ -1,4 +1,5 @@
 {
+  "name": "fx-server",
   "$schema": "..\\..\\node_modules\\nx\\schemas\\project-schema.json",
   "sourceRoot": "packages/fx-server",
   "projectType": "application",
@@ -9,6 +10,13 @@
       "options": {
         "command": "node ./build.js",
         "cwd": "packages/crendio-framework"
+      }
+    },
+    "run": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "command": "docker-compose up -d --build",
+        "cwd": "."
       }
     }
   },

@@ -15,23 +15,22 @@ export const App = (options: AppOptions) => {
 
     const onReadys: (() => void)[] = [];
     for (const module of localOptions.modules) {
-
-    const onReadys: (() => void)[] = [];
-    for (const module of localOptions.modules) {
-      const events = Reflect.getMetadata("events", module.prototype);
-      if (events) {
-        for (const [, event] of Object.entries<any>(events)) {
-        for (const [, event] of Object.entries<any>(events)) {
-          allEvents.push(event.methodName);
+      const onReadys: (() => void)[] = [];
+      for (const module of localOptions.modules) {
+        const events = Reflect.getMetadata("events", module.prototype);
+        if (events) {
+          for (const [, event] of Object.entries<any>(events)) {
+            for (const [, event] of Object.entries<any>(events)) {
+              allEvents.push(event.methodName);
+            }
+          }
+          const modInstance = new module();
+          if (modInstance["$onReady"]) {
+            onReadys.push(modInstance["$onReady"]);
+          }
         }
       }
-      const modInstance = new module();
-      if (modInstance["$onReady"]) {
-        onReadys.push(modInstance["$onReady"]);
-        onReadys.push(modInstance["$onReady"]);
-      }
     }
-
     const tr = class extends constructor {
       constructor(...args: any[]) {
         super(...args);
@@ -50,7 +49,9 @@ export const App = (options: AppOptions) => {
     };
 
     new tr();
-    new tr();
+
+    console.log(`started`);
+
     return tr;
   };
 };

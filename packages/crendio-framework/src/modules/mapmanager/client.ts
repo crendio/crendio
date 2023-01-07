@@ -8,7 +8,9 @@ export class MapManagerClient {
     net: false,
   })
   public onStart(_: undefined, resource: string) {
-    emit("onClientMapStart", resource);
-    emit("onClientGameTypeStart", resource);
+    if (resource === GetCurrentResourceName()) {
+      emit("onClientMapStart", resource);
+      emit("onClientGameTypeStart", resource);
+    }
   }
 }

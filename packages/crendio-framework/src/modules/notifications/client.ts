@@ -5,7 +5,9 @@ import { Module } from "@crendio/crendio";
 })
 export class NotificationsClient {
   public sendStandard(message: string): void {
-    // yet-impl
+    BeginTextCommandThefeedPost("STRING");
+    AddTextComponentSubstringPlayerName(message);
+    EndTextCommandThefeedPostTicker(true, true);
   }
 
   public helpText(message: string): void {

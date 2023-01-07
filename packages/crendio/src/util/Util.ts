@@ -1,6 +1,6 @@
+
 export class Util {
-export class Util {
-  public static getMetadata<U = any, T = any>(
+  public static getMetadata<U extends object, T extends object = any>(
     target: T,
     key: string,
     defaultData: U
